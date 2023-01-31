@@ -1,23 +1,23 @@
-CREATE TABLE worker(
-ID IDENTITY PRIMARY KEY,
-NAME VARCHAR(1000) NOT NULL CHECK(CHAR_LENGTH(NAME)>=2 ),
-BIRTHDAY DATE CHECK ((YEAR FROM BIRTHDAY) >= 1900),
-LEVEL VARCHAR NOT NULL CHECK(LEVEL IN ('Trainee', 'Junior','Middle','Senior')),
-SALARY INT CHECK (SALARY >= 100 AND SALARY <=100000) )
+create table worker(
+id identity primary key,
+name varchar(1000) not null check(char_length(name)>=2 ),
+birthday date check ((YEAR from birthday) >= 1900),
+level varchar not null check(level in ('Trainee', 'Junior','Middle','Senior')),
+salary int check (salary >= 100 and salary <= 100000) )
 
-CREATE TABLE client(
-id IDENTITY PRIMARY KEY,
-name VARCHAR(1000) NOT NULL CHECK (CHAR_LENGTH(NAME)>=2 ))
+create table client(
+id identity primary key,
+name varchar(1000) not null check (char_lengt(name)>=2 ))
 
-CREATE TABLE project (
-id IDENTITY PRIMARY KEY,
-CLIENT_ID BIGINT,
-START_DATE DATE,
-FINISH_DATE DATE)
+create table project (
+id identity primary key,
+client_id bigint,
+start_date date,
+finish_date date)
 
-CREATE TABLE project_worker(
-    project_id BIGINT NOT NULL,
-    worker_id BIGINT NOT NULL,    
-    FOREIGN KEY(project_id) REFERENCES project(id),
-    FOREIGN KEY (worker_id) REFERENCES worker(id),
-    PRIMARY KEY (project_id, worker_id))
+create table project_worker(
+    project_id bigint not null,
+    worker_id bigint not null,    
+    foreign key(project_id) references project(id),
+    foreign key (worker_id) references worker(id),
+    primary key (project_id, worker_id))

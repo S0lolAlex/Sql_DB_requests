@@ -1,4 +1,4 @@
-INSERT INTO WORKER (NAME, BIRTHDAY, LEVEL, SALARY) VALUES
+insert into worker (name, birthday, level, salary) values
 ('JOHN', '1919-05-25', 'Trainee', 600),
 ('alex', '2000-07-31', 'Senior', 4000),
 ('Judi', '1996-03-22', 'Trainee', 700),
@@ -10,14 +10,14 @@ INSERT INTO WORKER (NAME, BIRTHDAY, LEVEL, SALARY) VALUES
 ('Mike', '1985-01-21', 'Middle', 2990),
 ('Mishel', '1987-06-11', 'Trainee', 990);
 
-INSERT INTO CLIENT (NAME) VALUES
+insert into client (name) values
 ('Fred'),
 ('Dave'),
 ('Alex'),
 ('Bonny'),
 ('Sam');
 
-INSERT INTO PROJECT (CLIENT_ID, START_DATE, FINISH_DATE) VALUES
+insert into project (client_id, startd_date, finish_date) values
 (1,'2021-03-11','2022-07-11'),
 (2,'2021-04-11','2022-06-03'),
 (3,'2021-07-11','2022-04-19'),
@@ -29,7 +29,7 @@ INSERT INTO PROJECT (CLIENT_ID, START_DATE, FINISH_DATE) VALUES
 (9,'2022-01-11','2022-04-11'),
 (10,'2020-02-11','2022-01-23');
 
-INSERT INTO PROJECT_WORKER(PROJECT_ID, WORKER_ID) VALUES
+insert into project_worker(project_id, worker_id) values
 (1,3),(1,2),(1,7),(1,5),(1,9),
 (2,7),(2,3),(2,1),
 (3,10),
