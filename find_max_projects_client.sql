@@ -1,16 +1,16 @@
-SELECT name, count(project_id)
-FROM worker 
-JOIN project_worker ON project_worker.worker_id = worker.id
-WHERE id IN 
+select name, count(project_id) as project_count
+from worker 
+join project_worker on project_worker.worker_id = worker.id
+where id in 
 (
-   SELECT worker_id
-   FROM  project_worker
-   GROUP BY worker_id
-   HAVING  count(project_id) IN (
-       SELECT count(project_id)
-        FROM project_worker
-        GROUP BY worker_id
-        ORDER BY count(project_id) DESC
-         LIMIT 1
+   select worker_id
+   from  project_worker
+   group by worker_id
+   having  count(project_id) in (
+       select count(project_id)
+        from project_worker
+        group by worker_id
+        order by count(project_id) desc
+         limit 1
 	)
 )

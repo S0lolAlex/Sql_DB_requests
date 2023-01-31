@@ -1,3 +1,6 @@
-SELECT  id, name, birthday, level, salary
-FROM worker
-WHERE salary = (SELECT MAX(salary) FROM worker);
+select name,salary
+from worker
+group by name
+having salary = (
+select max(salary) 
+from worker)
